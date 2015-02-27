@@ -1,0 +1,391 @@
+---
+category: EOY
+path: '/api/deleteEoy'
+title: 'Delete EOY'
+type: 'POST'
+
+layout: nil
+---
+
+## deleteEoy Method
+
+### Overview
+
+> This method will be used for removing EOY Financial statement details.
+
+### Business Rule
+
+* Fields (import details) under request must be mandatory.
+* On the response, status after removing will be displayed.
+
+### Usage
+
+* This will be used on removing EOY Financial statement details.
+
+### Request
+
+#### Import Details
+
+<table>
+	<tr>
+		<th>Field Name</th>
+		<th>Data Type</th>
+		<th>Description</th>
+		<th>Mandatory</th>
+	</tr>
+	<tr>
+		<td>AgencyID</td>
+		<td>string</td>
+		<td>Agency ID</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>WebBusinessID</td>
+		<td>integer</td>
+		<td>Landlord Web Business ID</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>AccountID</td>
+		<td>integer</td>
+		<td>Landlord Account ID</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>Action</td>
+		<td>string</td>
+		<td>Web Service Action</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>PropertyID</td>
+		<td>integer</td>
+		<td>Property ID</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>ActionType</td>
+		<td>string</td>
+		<td>Web Service Action Type</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>WebID</td>
+		<td>integer</td>
+		<td>Transaction ID</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>RemoveWebID</td>
+		<td>integer</td>
+		<td>Transaction ID to be removed</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>ManagementBusinessID</td>
+		<td>integer</td>
+		<td>Management Business ID</td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>ReceiptNumber</td>
+		<td>string</td>
+		<td>Receipt Number</td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>ReceiptAmount</td>
+		<td>double</td>
+		<td>Receipt Amount</td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>MeetingID</td>
+		<td>integer</td>
+		<td>Meeting ID</td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>CommonID</td>
+		<td>integer</td>
+		<td>Common ID</td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>DebtorRunID</td>
+		<td>integer</td>
+		<td>Debtor Run ID</td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>DebtorAmountDue</td>
+		<td>double</td>
+		<td>Debtor Amount Due</td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>ImageOrderNumber</td>
+		<td>integer</td>
+		<td>Image Order Number</td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>TaskID</td>
+		<td>integer</td>
+		<td>Task ID</td>
+		<td>no</td>
+	</tr>
+</table>
+
+### Response
+
+<table>
+	<tr>
+		<th>Field Name</th>
+		<th>Data Type</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>status</td>
+		<td>string</td>
+		<td>This is the status after ingestion.</td>
+	</tr>
+</table>
+
+### Sample Request
+
+#### Landlord
+
+```
+{
+  "Transaction": {
+    "Import": {
+      "Details": {
+        "AgencyID": "v301",
+        "WebBusinessID": "126",
+        "AccountID": "221",
+        "Action": "EOY-Financial",
+        "PropertyID": "0",
+        "ActionType": "Remove",
+        "WebID": "2846",
+        "RemoveWebID": "2845",
+        "ManagementBusinessID": "0",
+        "ReceiptNumber": "0",
+        "ReceiptAmount": "0",
+        "MeetingID": "0",
+        "CommonID": "0",
+        "DebtorRunID": "0",
+        "DebtorAmountDue": "0.00"
+      }
+    },
+    "CompanyDetails": {
+      "Company": {
+        "ID": "v301",
+        "Name": "John Doe",
+        "ContactID": "1",
+        "Address1": "123 Sample Street",
+        "Address2": "HAWTHORN   VIC   3122",
+        "BusinessNumber": "1234567890",
+        "FaxNumber": "1234567890",
+        "eMail": "john.doe@sample.com",
+        "URL": "www.sample.com",
+        "StreetNo": "123",
+        "Street": "Sample",
+        "Suburb": "HAWTHORN",
+        "State": "VIC",
+        "Postcode": "3122",
+        "Country": "Australia"
+      }
+    },
+    "Accounts": {
+      "Account": [
+      {
+        "Account": {
+          "ID": "221",
+          "Owner": "Lorem ipsum dolor sit amet, consectetur",
+          "Address": "123 Sample Street HAWTHORN VIC 3122",
+          "BalanceHeld": "0",
+          "TotalInvoicesOutstanding": "0.00"
+          }
+        }
+      ]
+    },
+    "Owners": {
+      "Owner": [
+      {
+        "Owner": {
+          "ID": "28",
+          "Owner": "Lorem ipsum dolor sit amet, consectetur",
+          "Contact": "Lorem ipsum",
+          "Address1": "123 Sample Street",
+          "Address2": "HAWTHORN   VIC   3122",          
+          "BusinessNumber": "1234567890",
+          "eMail": "john.doe@sample.com",
+          "StreetNo": "65",
+          "Street": "Alexandra Road",
+          "Suburb": "RINGWOOD EAST",
+          "State": "VIC",
+          "Postcode": "3135",
+          "Country": "Australia"
+          }
+        }
+      ]
+    },
+    "Properties": {
+      "Property": [
+      {
+        "Property": {
+          "ID": "47",
+          "Address": "123 Sample Street HAWTHORN VIC 3122",
+          "Address1": "123 Sample Street",
+          "Address2": "HAWTHORN   VIC   3122",
+          "Bedrooms": "4",
+          "Bathrooms": "0",
+          "CarSpaces": "0",
+          "StreetNo": "123",
+          "Street": "Sample",
+          "Suburb": "MALVERN",
+          "State": "VIC",
+          "Postcode": "3144",
+          "Country": "Australia" 
+          }
+        }
+      ]
+    },
+    "Managements":{
+      "Management":[
+      {
+        "Business":{
+          "ID": "20",
+          "AccountID": "221",
+          "PropertyID": "47",
+          "ManagerID": "6",
+          "Address": "123 Sample Street HAWTHORN VIC 3122",
+          "Tenant": "Lorem ipsum",
+          "Rent": "2000",
+          "Period": "M",
+          "PaidTo": "09/08/2009",
+          "Credit": "1980",
+          "LeaseStart": "10/03/2003",
+          "LeaseExpiry": "09/03/2004",
+          "NextInspectionDate": "03/08/2010",
+          "RentDaysinArrears": "915",
+          "RentOutstanding": "60020",
+          "OtherChargesOutstanding": "0",
+          "TotalOutstanding": "60020",
+          "Manager": "John Doe",
+          "ManagerMobile": "1234567890",
+          "ManagerBusiness": "03-9815 0033",
+          "Manageremail": "john.doe@sample.com"
+          }
+        }
+      ],
+      "Contacts": [
+        {
+          "Contact": {
+            "Relation": "Branch",
+            "ContactID": "1",
+            "IsCompany": "Y",
+            "LastName": "John Doe",
+            "FullName": "John Doe",
+            "Mobile": "0419882764",
+            "eMail": "qatest@sample.com",
+            "BusinessID": "20",
+            "AccountID": "221"
+          }
+        },
+        {
+          "Contact": {
+            "Relation": "Landlord",
+            "ContactID": "28",
+            "IsCompany": "N",
+            "FirstName": "John",
+            "LastName": "Doe",
+            "FullName": "John Doe",
+            "eMail": "john.doe@sample.com",
+            "BusinessID": "20",
+            "AccountID": "221"
+          }
+        },
+        {
+          "Contact": {
+            "Relation": "Manager",
+            "ContactID": "6",
+            "IsCompany": "N",
+            "FirstName": "John",
+            "LastName": "Doe",
+            "FullName": "John Doe",
+            "Mobile": "1234567890",
+            "eMail": "john.doe@sample.com",
+            "BusinessID": "20",
+            "AccountID": "221"
+          }
+        },
+        {
+          "Contact": {
+            "Relation": "PaymentFrom",
+            "ContactID": "29",
+            "IsCompany": "N",
+            "FirstName": "John",
+            "LastName": "Doe",
+            "FullName": "John Doe",
+            "Mobile": "1234567890",
+            "eMail": "john.doe@sample.com",
+            "BusinessID": "20",
+            "AccountID": "221"
+          }
+        },
+        {
+          "Contact": {
+            "Relation": "Tenant",
+            "ContactID": "29",
+            "IsCompany": "N",
+            "FirstName": "John",
+            "LastName": "Doe",
+            "FullName": "John Doe",
+            "Mobile": "1234567890",
+            "eMail": "john.doe@sample.com",
+            "BusinessID": "20",
+            "AccountID": "221"
+          }
+        },
+        {
+          "Contact": {
+            "Relation": "Account Owner",
+            "ContactID": "28",
+            "IsCompany": "N",
+            "FirstName": "John",
+            "LastName": "Doe",
+            "FullName": "John Doe",
+            "eMail": "john.doe@sample.com",
+            "BusinessID": "0",
+            "AccountID": "221"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+### Sample Response
+
+#### Success:
+
+```
+{
+  "status": "success"
+}
+```
+
+#### Error:
+
+```
+{
+  "status": "error",
+  "message": ""
+}
+```
+
+####Note: 
+> On Error message: use standard HTTP error codes but with some additional information.
