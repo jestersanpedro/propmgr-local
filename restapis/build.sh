@@ -15,7 +15,7 @@ PROJECT_NAME=propmgr-local
 # push the github pages
 (
 	#cd $bin/../../propmgr-local
-	cd ~/Development/propmgr-carte-local/propmgr-local
+	cd ~/Development/propmgr-carte-local-rep/propmgr-local
 	git add .
 	git commit -m "Commit by build.sh"
 	git push origin gh-pages
