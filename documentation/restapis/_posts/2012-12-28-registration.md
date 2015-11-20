@@ -11,3 +11,9 @@ until a user-interface has already been implemented to the Portal.
 
 The web service **username**, **password** and **integrator ID** will be provided by the Super Admin.
 These credentials are needed to be able to successfully use the web service ingestion.
+
+When an integrator has been registered to the Portal, the following credentials will be provided:
+
+* Username
+* Password
+* Integrator ID
