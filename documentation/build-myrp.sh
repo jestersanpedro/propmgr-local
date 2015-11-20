@@ -14,7 +14,8 @@ PROJECT_NAME=propmgr-local
 
 # push the github pages
 (
-	cd ~/Development/propmgr-carte-local/propmgr-local
+	cd ~/Development-TWIST/propmgr-carte-local/propmgr-local
+	git pull origin master
 	git add .
 	git commit -m "Commit by build.sh"
 	git push origin master
